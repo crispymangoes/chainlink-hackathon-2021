@@ -1,0 +1,25 @@
+{
+  "name": "Get > Price",
+  "initiators": [
+    {
+      "type": "runlog",
+      "params": {
+        "address": "0x2c54ff0b5389bc648ceb8431af9d4902da2ca30f"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "type": "universal-price-feed"
+    },
+    {
+      "type": "multiply"
+    },
+    {
+      "type": "ethuint256"
+    },
+    {
+      "type": "ethtx"
+    }
+  ]
+}
