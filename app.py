@@ -19,6 +19,10 @@ def call_adapter():
     adapter = Adapter(data)
     return jsonify(adapter.result)
 
+@app.route('/test', methods=['GET'])
+def tester():
+    return jsonify("hello")
+
 
 if __name__ == '__main__':
-    app.run(debug=True, host='192.168.1.71', port='8080', threaded=True)
+    app.run(debug=True, host='0.0.0.0', port='8080', threaded=True)

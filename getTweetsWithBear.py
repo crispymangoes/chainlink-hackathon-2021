@@ -4,7 +4,9 @@ import json
 
 # To set your enviornment variables in your terminal run the following line:
 # export 'BEARER_TOKEN'='<your_bearer_token>'
-
+# Actually need to run
+# export TWITTER_BEARER_TOKEN=YOUR_TOKEN
+# The quotes broke it for m
 
 def auth():
     return os.environ.get("TWITTER_BEARER_TOKEN")
