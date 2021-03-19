@@ -2,6 +2,8 @@ from flask import Flask, request, jsonify
 
 from adapter import Adapter
 
+from tweetAdapter import tweetAdapter
+
 app = Flask(__name__)
 
 
@@ -18,6 +20,16 @@ def call_adapter():
         data = {}
     adapter = Adapter(data)
     return jsonify(adapter.result)
+
+
+@app.route('/grabTweet', methods=['POST'])
+def call_tweet_adapter():
+    data = request.get_json()
+    if data == '':
+        data = {}
+    adapter = tweetAdapter(data)
+    tweet = adapter.grabTweet()
+    return jsonify(tweet)
 
 @app.route('/test', methods=['GET'])
 def tester():

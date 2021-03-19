@@ -4,7 +4,7 @@ import json
 
 # To set your enviornment variables in your terminal run the following line:
 # export 'BEARER_TOKEN'='<your_bearer_token>'
-# Actually need to run
+# Actually need to run this IN THE VENV
 # export TWITTER_BEARER_TOKEN=YOUR_TOKEN
 # The quotes broke it for m
 
@@ -21,7 +21,7 @@ def create_url():
     # in_reply_to_user_id, lang, non_public_metrics, organic_metrics,
     # possibly_sensitive, promoted_metrics, public_metrics, referenced_tweets,
     # source, text, and withheld
-    ids = "ids=1372922217919434753"
+    ids = "ids=1372437344851214339"
     # You can adjust ids to include a single Tweets.
     # Or you can add to up to 100 comma-separated IDs
     url = "https://api.twitter.com/2/tweets?{}&{}".format(ids, tweet_fields)
@@ -46,7 +46,6 @@ def connect_to_endpoint(url, headers):
 
 
 def main():
-    print(auth())
     bearer_token = auth()
     url = create_url()
     headers = create_headers(bearer_token)
