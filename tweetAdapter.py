@@ -59,6 +59,14 @@ class tweetAdapter:
             )
         return response.json()
 
+    def result_success(self, data):
+        self.result = {
+            'jobRunID': self.id,
+            'data': self.result, # was data
+            'result': self.result,
+            'statusCode': 200,
+        }
+
     def grabTweet(self):
         bearer_token = self.auth()
         self.set_params()
@@ -66,4 +74,6 @@ class tweetAdapter:
         headers = self.create_headers(bearer_token)
         json_response = self.connect_to_endpoint(url, headers)
         # print(json.dumps(json_response, indent=4, sort_keys=True))
-        return json_response['data'][0]['text']
+        self.result = json_response['data'][0]['text']
+        self.result_success(json_response)
+        # return self.josn_result

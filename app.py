@@ -13,7 +13,7 @@ def log_request_info():
     app.logger.debug('Body: %s', request.get_data())
 
 
-@app.route('/', methods=['POST'])
+@app.route('/price', methods=['POST'])
 def call_adapter():
     data = request.get_json()
     if data == '':
@@ -28,8 +28,8 @@ def call_tweet_adapter():
     if data == '':
         data = {}
     adapter = tweetAdapter(data)
-    tweet = adapter.grabTweet()
-    return jsonify(tweet)
+    adapter.grabTweet()
+    return jsonify(adapter.result)
 
 @app.route('/test', methods=['GET'])
 def tester():
