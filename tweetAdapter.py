@@ -66,4 +66,4 @@ class tweetAdapter:
         headers = self.create_headers(bearer_token)
         json_response = self.connect_to_endpoint(url, headers)
         # print(json.dumps(json_response, indent=4, sort_keys=True))
-        return json_response
+        return json_response['data'][0]['text']
