@@ -69,6 +69,7 @@ class tweetAdapter:
 
     def grabTweet(self):
         bearer_token = self.auth()
+        print(bearer_token)
         self.set_params()
         url = self.create_url()
         headers = self.create_headers(bearer_token)

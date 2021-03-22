@@ -6,3 +6,6 @@ Then find eth0 and grab the inet address mine was 172.29.213.52
 Helpful curl command to test adapter API
 curl -X POST -H "content-type:application/json" "http://localhost:8080/" --data '{ "id": 0, "data": { "from": "ETH", "to": "USD" } }'
 
+# Actually need to run this IN THE VENV the terminal that is running the app.py
+# export TWITTER_BEARER_TOKEN=YOUR_TOKEN
+# The quotes broke it for m

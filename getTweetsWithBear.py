@@ -4,7 +4,7 @@ import json
 
 # To set your enviornment variables in your terminal run the following line:
 # export 'BEARER_TOKEN'='<your_bearer_token>'
-# Actually need to run this IN THE VENV
+# Actually need to run this IN THE VENV the terminal that is running the app.py
 # export TWITTER_BEARER_TOKEN=YOUR_TOKEN
 # The quotes broke it for m
 

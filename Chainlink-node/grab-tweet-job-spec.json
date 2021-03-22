@@ -1,0 +1,23 @@
+
+{
+    "name": "Get > Tweet",
+    "initiators": [
+      {
+        "type": "runlog",
+        "params": {
+          "address": "0x2c54ff0b5389bc648ceb8431af9d4902da2ca30f"
+        }
+      }
+    ],
+    "tasks": [
+      {
+        "type": "grab-tweet"
+      },
+      {
+        "type": "ethbytes32"
+      },
+      {
+        "type": "ethtx"
+      }
+    ]
+  }
