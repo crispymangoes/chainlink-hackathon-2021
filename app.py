@@ -4,6 +4,8 @@ from adapter import Adapter
 
 from tweetAdapter import tweetAdapter
 
+from getRecentTweet import getRecentTweet
+
 app = Flask(__name__)
 
 
@@ -29,6 +31,15 @@ def call_tweet_adapter():
         data = {}
     adapter = tweetAdapter(data)
     adapter.grabTweet()
+    return jsonify(adapter.result)
+
+@app.route('/grabRecent', methods=['POST'])
+def call_recent_tweet_adapter():
+    data = request.get_json()
+    if data == '':
+        data = {}
+    adapter = getRecentTweet(data)
+    adapter.grabRecent()
     return jsonify(adapter.result)
 
 @app.route('/test', methods=['GET'])
