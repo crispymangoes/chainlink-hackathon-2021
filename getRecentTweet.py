@@ -74,5 +74,8 @@ class getRecentTweet:
         # print(json.dumps(json_response, indent=4, sort_keys=True))
         
         # self.result = json_response['data'][0]['text']
-        self.result = int(json_response['data'][0]['text'], 0) # add error check if python can't convert tweet to a number then have it return 0 which we know no user has the zero address
+        try:
+            self.result = int(json_response['data'][0]['text'], 0) # add error check if python can't convert tweet to a number then have it return 0 which we know no user has the zero address
+        except:
+            self.result = 0
         self.result_success(json_response)

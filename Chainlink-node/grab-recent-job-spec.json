@@ -1,0 +1,22 @@
+{
+    "name": "Get > Recnt Tweet",
+    "initiators": [
+      {
+        "type": "runlog",
+        "params": {
+          "address": "0x293108e9eba3c65ea0ae97c41a060fa75cae4d71"
+        }
+      }
+    ],
+    "tasks": [
+      {
+        "type": "grab-recent"
+      },
+      {
+        "type": "ethuint256"
+      },
+      {
+        "type": "ethtx"
+      }
+    ]
+  }
