@@ -29,8 +29,8 @@ contract twitterverify is ChainlinkClient, Ownable {
     constructor() public {
         //setPublicChainlinkToken();
         setChainlinkToken(0x326C977E6efc84E512bB9C30f76E30c160eD06FB);
-        oracle = 0x293108E9eBA3c65EA0ae97c41A060fA75CAe4D71; // oracle address
-        verifyUserJobId = "a066dce51a834fc7b11b729d0dc95025"; //job id
+        oracle = 0x0e70fe151Fa8A1477D4E2a42028DB8a231D2C827; // oracle address
+        verifyUserJobId = "a9382b18b97b4d4d9d228ab94906f419"; //job id
         fee = 1 * 10 ** 17; // 0.1 LINK
     }
     
@@ -47,7 +47,7 @@ contract twitterverify is ChainlinkClient, Ownable {
         verificationMap[msg.sender].requestId = sendChainlinkRequestTo(oracle, req, fee);
         return verificationMap[msg.sender].requestId;
     }
-    
+
     //callback function for verification
     function fulfill_verify(bytes32 _requestId, uint256 _address) public recordChainlinkFulfillment(_requestId) {
         address user = address(_address);

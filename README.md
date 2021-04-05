@@ -31,15 +31,17 @@ There are a couple of steps to get this going. For me I had to set up a Chainlin
 
 The contract is running on Polygon's Mumbai testnet, so go to their [faucet](https://faucet.matic.network/) and get some matic and link.
 
-Then go to the Remix IDE, and add this contract to your Deploy & Run transactions tab: 0xac11053cd5874aB74F3f19770C558Df98040A356.
+Then go to the Remix IDE, and add this contract to your Deploy & Run transactions tab: 0xC9c3256d5Fd7Be865d58D6e8238E0213953Fc8E3.
 
-Before you can call the verifyUser function, you need to approve the contract to spend your link, go to the mumbai testnet [explorer](https://explorer-mumbai.maticvigil.com/address/0x326C977E6efc84E512bB9C30f76E30c160eD06FB/write-contract), to the link contract, and to the Write contract tab. There you will see the ```approve``` function. Set _spender = 0xac11053cd5874aB74F3f19770C558Df98040A356,  and the _value to 100000000000000000. Note Link uses 18 decimals, so _value is only 0.1 Link.
+Before you can call the verifyUser function, you need to approve the contract to spend your link, go to the mumbai testnet [explorer](https://explorer-mumbai.maticvigil.com/address/0x326C977E6efc84E512bB9C30f76E30c160eD06FB/write-contract), to the link contract, and to the Write contract tab. There you will see the ```approve``` function. Set _spender = 0xC9c3256d5Fd7Be865d58D6e8238E0213953Fc8E3,  and the _value to 100000000000000000. Note Link uses 18 decimals, so _value is only 0.1 Link.
 
 Now that the contract is approved to spend your 0.1 Link, you can pass your twitter username into the verifyUser function and wait. As long as your latest tweet is the same polygon address you used to call verifyUser, then the verification will be successful. 
 
 To check if the verification was successful, input your polygon address into the verificationMap. If ```verified``` is true, then you have done it!
 
+## Future Development
 
+Since the external adapter is built using Python, we can leverage Python's amazing Machine Learning Libraries to conduct more in depth verification of twitter users. The external adapter can run a TensorFlow model that predicts whether a twitter user is a bot or a human based off their tweet history, and twitter usage.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

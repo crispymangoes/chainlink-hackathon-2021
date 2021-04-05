@@ -1,10 +1,10 @@
 {
-    "name": "Get > Recnt Tweet",
+    "name": "Get > Recent Tweet",
     "initiators": [
       {
         "type": "runlog",
         "params": {
-          "address": "0x293108e9eba3c65ea0ae97c41a060fa75cae4d71"
+          "address": "0x0e70fe151fa8a1477d4e2a42028db8a231d2c827"
         }
       }
     ],
