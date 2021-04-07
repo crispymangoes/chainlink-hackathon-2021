@@ -64,6 +64,18 @@ class getRecentTweet:
             'statusCode': 200,
         }
 
+    def extractAddress(self, tweet):
+        address = ""
+        for i in range(0, len(tweet) - 1):
+            if tweet[i] == "0" and tweet[i+1] == "x":
+                address = tweet[i:]
+                break
+        if address == "":
+            return "No address found"
+        else:
+            return address
+
+
     def grabRecent(self):
         bearer_token = self.auth()
         print(bearer_token)
@@ -75,7 +87,8 @@ class getRecentTweet:
         
         # self.result = json_response['data'][0]['text']
         try:
-            self.result = int(json_response['data'][0]['text'], 0) # add error check if python can't convert tweet to a number then have it return 0 which we know no user has the zero address
+            address = self.extractAddress(json_response['data'][0]['text'])
+            self.result = int(address, 0) # add error check if python can't convert tweet to a number then have it return 0 which we know no user has the zero address
         except:
             self.result = 0
         self.result_success(json_response)
