@@ -4,7 +4,7 @@ With so many new NFT artists flooding into crypto, how can you be sure that an a
 
 # Demo
 
-Click [here](https://www.youtube.com/watch?v=c6m_dMIEAr8) to view the demo for this project!
+Click [here](https://youtu.be/BdV3zOOZjCo) to view the demo for this project!
 
 ## How it works
 
