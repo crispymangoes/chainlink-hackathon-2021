@@ -2,6 +2,10 @@
 
 With so many new NFT artists flooding into crypto, how can you be sure that an artist is who they claim to be? One solution is to use Chainlink Oracles to verify ownership of crypto addresses with Twitter. 
 
+# Demo
+
+Click [here](https://www.youtube.com/watch?v=c6m_dMIEAr8) to view the demo for this project!
+
 ## How it works
 
 The NFT artist will post a tweet of their crypto address. They then give the smart contract their twitter username. The smart contract sends this username to an oracle, who then gives this to a node that will utilize the twitter api to grab that users latest tweet, and return it to the smart contract. If the tweeted address matches the address that originally called the verification function, then the twitter user is verified.
